@@ -34,7 +34,7 @@ class AuthController {
 
             const hashPassword = await bcrypt.hash(password, 5)
             const {value} = new Role({value: role})
-            const user = new User({email, fullName, login, password: hashPassword, role: value})
+            const user = new User({email, fullName, login, password: hashPassword, role: value, link: Math.random()})
             await user.save()
 
             return  res.status(200).json({message:`Користувач створений!`})

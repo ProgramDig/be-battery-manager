@@ -7,5 +7,5 @@ Content-Type: application/json
   "password":"123456",
   "rePassword": "123456",
   "fullName": "Черевань Олексій",
-  "role": "ADMIN"
+  "role": "USER"
 }

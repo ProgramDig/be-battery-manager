@@ -15,7 +15,7 @@ const NICKNAME_REGEX = /^[A-Za-z0-9]+([A-Za-z0-9]*|[._-]?[A-Za-z0-9]+)*$/;
 const PASSWORD_MESSAGE = `Надто простий пароль. Довжина пароля має бути більша ніж ${MIN} символів і менша ніж ${MAX}.`
 
 const ROLE_MESSAGE = 'Некоректна роль користувача.'
-const ROLES = ['ADMIN', 'DEPARTMENT_HEAD', 'SCIENTIFIC_EMPLOYER', 'TEACHER']
+const ROLES = ['ADMIN', 'USER', 'SCIENTIFIC_EMPLOYER', 'TEACHER']
 
 const regValidation = [
     check('email', EMAIL_MESSAGE).matches(EMAIL_REGEX),
