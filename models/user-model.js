@@ -6,7 +6,7 @@ const User = new Schema({
     fullName:{type:String, require:true},
     password:{type:String, require:true},
     role:{type:String, require:true, ref:'Role'},
-    isActivated:{type:Boolean, require:true, default:false},
+    isActivated:{type:Boolean, require:true, default:true},
     link:{type:String, default: '', unique: true}
 })
 
