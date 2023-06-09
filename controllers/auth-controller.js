@@ -3,6 +3,7 @@ const {validationResult} = require('express-validator')
 const {generateAccessToken} = require('../services/token-service')
 const Role = require('../models/role-model')
 const User = require('../models/user-model')
+const RoleService = require("../services/role-service")
 
 class AuthController {
     async registration(req, res) {
@@ -40,6 +41,16 @@ class AuthController {
         } catch (e) {
             console.log(e.message)
             return  res.status(500).json({message: 'Помилка при реєстрації.'})
+        }
+    }
+
+    async createRole(req, res) {
+        try {
+            const role = await RoleService.createRole();
+            res.status(200).json({role})
+        } catch (e) {
+            console.log(e.message)
+            res.status(500).json({message: 'Промилка створення ролі.'})
         }
     }
 

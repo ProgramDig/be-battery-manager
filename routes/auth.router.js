@@ -14,7 +14,7 @@ router.get('/users', authController.getUsers)
 // // role test
 // // auth users role: USER
 // // login: admin22 pass: admin22
-// router.get('/admin', roleMiddleware(['ADMIN']), authController.getUsers)
+router.post('/role', authController.createRole)
 // // login: teacher22 pass: teacher22
 // router.get('/teacher', roleMiddleware(['TEACHER']), authController.getUsers)
 // // login: departhead22 pass: departhead22
