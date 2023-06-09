@@ -14,7 +14,7 @@ class BatteryService {
 
     async getFilter(filterParams) {
         try {
-
+            return await Battery.find(filterParams);
         } catch (e) {
             const message = e.message;
             console.log(message)

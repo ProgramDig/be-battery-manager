@@ -8,19 +8,19 @@ class BatteryController {
         } catch (e) {
             const message= e.message;
             console.log(message)
-            return response.status(500).json({message: 'Помилка отримання одного акумулятора.'});
+            return response.status(500).json({message: 'Помилка отримання списку акумуляторів.'});
         }
     }
 
     async getFilter(request, response) {
         try {
-            const filterParams = {...request.params.params}
+            const filterParams = {...request.body}
             const batteries = await BatteryService.getFilter(filterParams);
             return response.status(200).json({...batteries});
         } catch (e) {
             const message= e.message;
             console.log(message)
-            return response.status(500).json({message: 'Помилка отримання одного акумулятора.'});
+            return response.status(500).json({message: 'Помилка отримання відфільтрованого списку акумуляторів.'});
         }
     }
 
@@ -56,7 +56,7 @@ class BatteryController {
         } catch (e) {
             const message= e.message;
             console.log(message)
-            return response.status(500).json({message: 'Помилка отримання одного акумулятора.'});
+            return response.status(500).json({message: 'Помилка оновлення одного акумулятора.'});
         }
     }
 
@@ -68,7 +68,7 @@ class BatteryController {
         } catch (e) {
             const message= e.message;
             console.log(message)
-            return response.status(500).json({message: 'Помилка отримання одного акумулятора.'});
+            return response.status(500).json({message: 'Помилка видалення одного акумулятора.'});
         }
     }
 }
