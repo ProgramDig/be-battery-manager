@@ -62,7 +62,7 @@ class BatteryController {
 
     async delete(request, response) {
         try {
-            const id = request.params.id;
+            const id = request.body.id;
             const battery = await BatteryService.delete(id);
             return response.status(200).json({...battery});
         } catch (e) {
